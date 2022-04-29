@@ -16,12 +16,11 @@ body{
 }
 
 #main #formulario {
-    border: 1px solid rebeccapurple;
     margin-top:10px;
     background-color:white;
     border-radius:5px;
     display:flex;
-    flex-direction: column;
+    flex-direction:column;
 }
 #main #formulario .ajuste{
     margin-top:20px;
@@ -36,7 +35,19 @@ body{
     border:2px solid black;
     border-radius:4px;
 }
-#main #formulario input:focus{
+#main #formulario .ajuste input:focus{
     background-color: #3E497A !important;
     color:white;
+}
+#main #formulario button{
+    margin-top:10px;
+    border:1px solid black;
+    width:95px;
+    height:25px;
+    border-radius:4px;
+    background-color:#D3DEDC;
+    box-shadow: 0 0 0.5em black;
+}
+#main #formulario button:active{
+    background-color:#92A9BD;
 }
