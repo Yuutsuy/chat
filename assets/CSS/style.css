@@ -39,7 +39,7 @@ body{
     border-radius:4px;
 }
 #main #formulario .ajuste input:focus{
-    background-color: #3E497A !important;
+    background-color:#A3E4DB;
     color:white;
 }
 #main #formulario button{
@@ -84,4 +84,10 @@ body{
     height:30px;
     color:white;
     background-color:#4B7BE5;
+}
+#main #bate-papo #enviarMensagem button:active{
+    background-color:#5534A5;
+}
+#main #bate-papo #enviarMensagem input:focus{
+    background-color:#A3E4DB;
 }
