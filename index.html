@@ -11,16 +11,21 @@
         <main id="main">
             <div id="formulario">
                 <form action="">
-                    <label for="origem">
-                        origem:
-                    </label>
-                    <input id="origem" placeholder="Digite a origem"/>
-                    <br>
-                    <label for="destino">
-                        destino:
-                    </label>
-                    <input id="destino" placeholder="Digite o destino"/>
+                    <div class="ajuste">
+                        <label for="origem">
+                            origem:
+                        </label>
+                        <input type="text" id="origem" placeholder="Digite a origem"/>
+                    </div>
+                    <div class="ajuste">
+                        <label for="destino">
+                            destino:
+                        </label>
+                        <input type="text" id="destino" placeholder="Digite o destino"/>
+                    </div>
+                    <button value="submit" onclick="envio()">Enviar dados</button>
                 </form>
+
             </div>
         </main>
         <!-- Fim tag main com id main (favor, não confundir o id com a tag) -->
