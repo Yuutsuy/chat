@@ -1,3 +1,8 @@
+/* definindo classes */
+li {
+    list-style:none;
+}
+
 body{
     overflow:hidden;
 }
@@ -74,13 +79,14 @@ body{
     display:flex;
     justify-content:space-between;
 }
-#main #bate-papo #enviarMensagem input{
+#main #bate-papo #enviarMensagem textarea{
     width:85%;
     height:30px;
     border-radius:4px;
     border:2px solid black;
     outline:none; /* remove as bordar brancas */
     padding:3px;
+    resize: none; /* remove "risquinhos" do textarea */
 }
 #main #bate-papo #enviarMensagem button{
     border:1px solid black;
@@ -93,7 +99,17 @@ body{
 #main #bate-papo #enviarMensagem button:active{
     background-color:#5534A5;
 }
-#main #bate-papo #enviarMensagem input:focus{
+#main #bate-papo #enviarMensagem textarea:focus{
     background-color:#A3E4DB;
     outline:none; /* remove as bordar brancas */
+}
+
+/* css das mensagens */
+#main #bate-papo #mensagens #msgEsquerda {
+    padding-left:5px;
+    list-style:none;
+}
+#main #bate-papo #mensagens #msgDireita {
+    float:right;
+    padding-right:5px;
 }

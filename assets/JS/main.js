@@ -1,32 +1,22 @@
 var origem = document.getElementById('origem');
 var destino = document.getElementById('destino');
 var mensagem = document.getElementById('msgDigitada');
-
-var obj = {
-    "origem" : origem.value,
-    "destino" : destino.value,
-    "mensagem" : mensagem.value
-};
-
-var xhr = new XMLHttpRequest(); // recebe instância
-
-xhr.open('GET', `https://barth.com.br/ApiChatCliqx/chat/verificarMensagem.php?origem=${obj.origem}&lt;nome_origem&gt;&amp;destino=${obj.destino}&lt;nome_destino&gt;`);
-xhr.send(null);
-xhr.onreadystatechange = function() {
-    if(xhr.readyState === 4){
-        if(xhr.status === 200){
-            console.log(xhr.obj);
-        }else{
-            console.log("erro no status do get");
-        };
-    };
-};
+var elLista = document.getElementById('msgExibidas');
 
 var enviar = function() {
-    var xhr = new XMLHttpRequest(); // recebe instância
 
+    var obj = {
+        origem : origem.value,
+        destino : destino.value,
+        mensagem : mensagem.value
+    };
+
+    var xhr = new XMLHttpRequest(); // recebe instância
     xhr.open('POST', `https://barth.com.br/ApiChatCliqx/chat/inserirMensagem.php`);
-    xhr.send(JSON.parse(obj));
+    
+    console.log(obj);
+    
+    xhr.send(JSON.stringify(obj));
     xhr.onreadystatechange = function() {
         if(xhr.readyState === 4){
             if(xhr.status === 201){
@@ -34,4 +24,26 @@ var enviar = function() {
             };
         };
     };
+    mensagem.value = '';
 };
+
+
+    var xhr = new XMLHttpRequest(); // recebe instância
+
+    xhr.open('GET', `https://barth.com.br/ApiChatCliqx/chat/verificarMensagem.php?origem=${origem.value}&destino=${destino.value}`);
+    xhr.send(null);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4){
+            if(xhr.status === 200){
+                console.log(result);
+                result = xhr.responseText;
+                for(i=0;i<result.length;i++){
+                    
+                    // var li = document.createElement('li');                    
+                    // elLista.appendChild(li);
+                }
+            }else{
+                console.log("erro no status do get");
+            };
+        };
+    };
