@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Chat</title>
+        <link rel="stylesheet" href="./main.css"/>
+    </head>
+    <body>
+        <!-- Tag main com id main (favor, não confundir o id com a tag) -->
+        <main id="main">
+            <!-- Div que recebe um formulário -->
+            <div id="formulario">
+                <!-- Formulário para enviar os valores para a api -->
+                <form>
+                    <!-- Div criada para ajuste no css -->
+                    <div class="ajuste">
+                        <!-- Label que vai receber o nome 'origem' -->
+                        <label for="origem">
+                            origem:
+                        </label>
+                        <!-- Fim label que vai receber o nome 'origem' -->
+                        <!-- Input que vai receber o nome do remetente -->
+                        <input value="joao" type="text" id="origem" placeholder="Digite a origem"/>
+                        <!-- Fim input que vai receber o nome do remetente -->
+                    </div>
+                    <!-- Fim div criada para ajuste no css -->
+                    <!-- Div criada para ajuste no css -->
+                    <div class="ajuste">
+                        <!-- Label que vai receber o nome 'destino' -->
+                        <label for="destino">
+                            destino:
+                        </label>
+                        <!-- Fim label que vai receber o nome 'destino' -->
+                        <!-- Input que vai receber o nome do destinatário -->
+                        <input value="leo" type="text" id="destino" placeholder="Digite o destino"/>
+                        <!-- Fim input que vai receber o nome do destinatário -->
+                    </div>
+                    <!-- Fim div criada para ajuste no css -->
+                </form>
+                <!-- Fim formulário para enviar os valores para a api -->
+            </div>
+            <!-- Fim div que recebe um formulário -->
+            <!-- Div que vai receber as conversas -->
+            <div id="bate-papo">
+                <!-- Div que vai receber as mensagens -->
+                <div id="mensagens">
+                    <!-- Div que vai receber as mensagens cadastradas na api e exibir -->
+                    <div id="msgEnviadas">
+                        <!--Tag ul criada para receber as mensagens em forma de li (processo feito pelo javascript) -->
+                        <ul id="msgExibidas"> 
+                        </ul>
+                        <!--Fim tag ul criada para receber as mensagens em forma de li (processo feito pelo javascript) -->
+                    </div>
+                    <!-- Fim div que vai receber as mensagens cadastradas na api e exibir -->
+                </div>
+                <!-- Fim div que vai receber as mensagens -->
+                <!-- Div que vai receber uma mensagem digitada para enviar a api -->
+                <div id="enviarMensagem">
+                    <!-- Textarea que recebe uma mensagem digitada pelo usuário -->
+                    <textarea id="msgDigitada" placeholder="Digite sua mensagem"></textarea>
+                    <!-- Fim textarea que recebe uma mensagem digitada pelo usuário -->
+                    <!-- Button para enviar a mensagem digitada para a api -->
+                    <button onclick="enviar()">Enviar</button>
+                    <!-- Fim button para enviar a mensagem digitada para a api -->
+                </div>
+                <!-- Fim div que vai receber uma mensagem digitada para enviar a api -->
+            </div>
+            <!-- Fim div que vai receber as conversas -->
+        </main>
+        <!-- Fim tag main com id main (favor, não confundir o id com a tag) -->
+
+        <!-- tag script linkada com o arquivo main.js na pasta JS -->
+        <script
+        type="application/javascript"
+        src="./assets/JS/main.js"></script>
+    </body>
+</html>

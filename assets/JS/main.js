@@ -42,7 +42,7 @@ setInterval(function(){
                     var titulo = document.createElement('h5');
                     var paragraf = document.createElement('p');
 
-                    // cria tag h5 contendo nome
+                    // cria tag h5 contendo nome de quem enviou a mensagem
                     titulo.innerHTML = result[i].origem;
                     // appenda em uma lista
                     li.appendChild(titulo);
@@ -51,11 +51,20 @@ setInterval(function(){
                     paragraf.innerHTML = result[i].mensagem;
                     // appenda em uma lista
                     li.appendChild(paragraf);
-
-                    // appenda tudo ao elLista
-                    elLista.appendChild(li);
-                }
-            }
+                    
+                    if(origem.value === result[i].origem){
+                        li.classList.add('esquerda');
+                        // appenda tudo ao elLista
+                        elLista.appendChild(li); 
+                    }else{
+                        // criando uma classList para adicionar a li
+                        li.classList.add('direita');
+                        
+                        // appenda tudo ao elLista
+                        elLista.appendChild(li); 
+                    }
+                };
+            };
         };
     };
 }, 1000);
