@@ -5,12 +5,15 @@ main {
     display:block;
     margin-left:auto;
     margin-right:auto;
-    margin-top:2%;
+    margin-top:3%;
     padding-left:20px;
     padding-right:20px;
     background-color: #DDDDDD;
     text-align:center;
     font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    overflow:hidden;
 }
 main form{
     background-color:#066163;
