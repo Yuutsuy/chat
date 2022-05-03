@@ -27,6 +27,7 @@ li {
 /* definindo css para o resto do código */
 body{
     overflow:hidden;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 #main {
@@ -100,13 +101,13 @@ body{
 /* cria um css para a barra de scroll da div mensagens */
 #main #bate-papo #mensagens::-webkit-scrollbar{
     background-color:#A0BCC2;
-    width:10px;
+    width:5px;
 }
 /* cria um css para o scroll dentro da barra de scroll da div mensagens */
 #main #bate-papo #mensagens::-webkit-scrollbar-thumb{
-    width:10px;
-    height:40px;
-    background-color:#DAE5D0;
+    width:5px;
+    height:20%;
+    background-color:#1C658C;
     border-radius:10px;
 }
 #main #bate-papo #enviarMensagem{

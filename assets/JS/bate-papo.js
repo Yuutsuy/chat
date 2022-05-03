@@ -67,4 +67,4 @@ setInterval(function(){
             };
         };
     };
-}, 1000);
+}, 900);
