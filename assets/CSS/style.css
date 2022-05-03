@@ -49,6 +49,7 @@ main form button{
     margin-left:25%;
     background-color:#398AB9;
     border:1px solid black;
+    color:white;
 }
 main form button:active{
     background-color:#1C658C;

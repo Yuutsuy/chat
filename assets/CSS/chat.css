@@ -11,18 +11,12 @@ li {
 }
 
 .esquerda {
-    list-style:none;
-    margin-left:5px;
-    margin-bottom:5px;
-    border:1px solid black;
     background-color:rgba(146, 169, 189, 0.5);
     width:50%;
-    border-top-right-radius:20px;
     border-bottom-right-radius:20px;
+    text-align:start;
 }
 .direita {
-    
-    border-top-left-radius:20px;
     border-bottom-left-radius:20px;
     float:right;
     text-align:end;
@@ -135,4 +129,7 @@ body{
 #main #bate-papo #mensagens #msgExibidas {
     padding-left:2px;
     list-style:none;
+}
+#main #bate-papo #mensagens #msgExibidas li h5{
+    text-transform:uppercase;
 }
