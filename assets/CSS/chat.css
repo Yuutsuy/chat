@@ -97,10 +97,12 @@ body{
     overflow:hidden;
     overflow-y:scroll;
 }
+/* cria um css para a barra de scroll da div mensagens */
 #main #bate-papo #mensagens::-webkit-scrollbar{
     background-color:#A0BCC2;
     width:10px;
 }
+/* cria um css para o scroll dentro da barra de scroll da div mensagens */
 #main #bate-papo #mensagens::-webkit-scrollbar-thumb{
     width:10px;
     height:40px;
