@@ -1,36 +1,12 @@
-var origem = document.getElementById('origem');
-var destino = document.getElementById('destino');
-var mensagem = document.getElementById('msgDigitada');
+var elOrigem = document.getElementById('origem');
+var elDestino = document.getElementById('destino');
+var elMensagem = document.getElementById('msgDigitada');
 var elLista = document.getElementById('msgExibidas');
-
-var enviar = function() {
-
-    var obj = {
-        origem : origem.value,
-        destino : destino.value,
-        mensagem : mensagem.value
-    };
-
-    var xhr = new XMLHttpRequest(); // recebe instância
-    xhr.open('POST', `https://barth.com.br/ApiChatCliqx/chat/inserirMensagem.php`);
-    
-    console.log(obj);
-    
-    xhr.send(JSON.stringify(obj));
-    xhr.onreadystatechange = function() {
-        if(xhr.readyState === 4){
-            if(xhr.status === 201){
-                console.log(xhr.responseText);
-            };
-        };
-    };
-    mensagem.value = '';
-};
 
 setInterval(function(){
     var xhr = new XMLHttpRequest(); // recebe instância
 
-    xhr.open('GET', `https://barth.com.br/ApiChatCliqx/chat/verificarMensagem.php?origem=${origem.value}&destino=${destino.value}`);
+    xhr.open('GET', `https://barth.com.br/ApiChatCliqx/chat/verificarMensagem.php?origem=${elOrigem.value}&destino=${elDestino.value}`);
     xhr.send(null);
     xhr.onreadystatechange = function() {
         if(xhr.readyState === 4){
@@ -52,7 +28,7 @@ setInterval(function(){
                     // appenda em uma lista
                     li.appendChild(paragraf);
                     
-                    if(origem.value === result[i].origem){
+                    if(elOrigem.value === result[i].origem){
                         li.classList.add('esquerda');
                         // appenda tudo ao elLista
                         elLista.appendChild(li); 
@@ -67,4 +43,29 @@ setInterval(function(){
             };
         };
     };
-}, 900);
+}, 2000);
+
+var enviar = function() {
+
+    var obj = {
+        origem : elOrigem.value,
+        destino : elDestino.value,
+        mensagem : elMensagem.value
+    };
+
+    var xhr = new XMLHttpRequest(); // recebe instância
+    xhr.open('POST', `https://barth.com.br/ApiChatCliqx/chat/inserirMensagem.php`);
+    
+    console.log(obj);
+    
+    xhr.send(JSON.stringify(obj));
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState === 4){
+            if(xhr.status === 201){
+                console.log(xhr);
+                console.log(xhr.responseText);
+            };
+        };
+    };
+    elMensagem.value = '';
+};

@@ -15,7 +15,7 @@ main {
 body{
     overflow:hidden;
 }
-main form{
+main #form{
     background-color:#066163;
     color:white;
     height:85%;
@@ -27,17 +27,17 @@ main form{
     justify-content:center;
     text-align:start;   
 }
-main form .ajuste{
+main #form .ajuste{
     display:flex;
     flex-direction:column;
     margin-bottom:5%;
     margin-left:5%;
     margin-right:5%;
 }
-main form .ajuste label{
+main #form .ajuste label{
     font-size:20px;
 }
-main form .ajuste input{
+main #form .ajuste input{
     border:1px solid black;
     width:100%;
     height:30px;
@@ -45,7 +45,7 @@ main form .ajuste input{
     outline:none;
     padding-left:10px;  
 }
-main form button{
+main #form button{
     width:50%;
     height:25px;
     border-radius:4px;
@@ -54,6 +54,6 @@ main form button{
     border:1px solid black;
     color:white;
 }
-main form button:active{
+main #form button:active{
     background-color:#1C658C;
 }
