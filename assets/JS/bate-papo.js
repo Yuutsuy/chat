@@ -3,18 +3,29 @@ var elDestino = document.getElementById('destino');
 var elMensagem = document.getElementById('msgDigitada');
 var elLista = document.getElementById('msgExibidas');
 
-var opRequest = new XMLHttpRequest();
-opRequest.open('GET', 'https://barth.com.br/ApiChatCliqx/chat/receberUsuarios.php');
-opRequest.send(null);
+elOrigem.value = localStorage.nome;
+
+// abrindo uma requisição
+var opRequest = new XMLHttpRequest(); // criando uma instância
+opRequest.open('GET', 'https://barth.com.br/ApiChatCliqx/chat/receberUsuarios.php'); // consultando um url
+opRequest.send(null); // não envia nada, pois está apenas consultando a api
+// chaca o estado de prontidão
 opRequest.onreadystatechange = function() {
+    // checa o readyState da api
     if(opRequest.readyState === 4){
+        // checa o status da api
         if(opRequest.status === 200){
+            // cria variavel que vai receber a esposta da api (responseText) em forma de objeto
             var resApi = JSON.parse(opRequest.responseText);
-            cont = 0;
+            // percorre o objeto
             for(i=0;i<resApi.length;i++){
-                var opt = document.createElement('option');
-                opt.innerHTML = resApi[i].nome;
-                elDestino.appendChild(opt);
+                // cria um let que vai criar um elemento html
+                let opt = document.createElement('option');
+                // cria condição para imprimir apenas os nomes que não estiverem na caixa de entrada de "origem"
+                if(elOrigem.value !== resApi[i].nome){
+                    opt.innerHTML = resApi[i].nome;
+                    elDestino.appendChild(opt);
+                };
             };
         };
     };
@@ -39,9 +50,9 @@ setInterval(function(){
                 // percorre todas as mensagens criadas na api
                 for(i=0;i<result.length;i++){
                     // definindo variaveis com elementos html para serem criados
-                    var li = document.createElement('li');
-                    var titulo = document.createElement('h5');
-                    var paragraf = document.createElement('p');
+                    let li = document.createElement('li');
+                    let titulo = document.createElement('h5');
+                    let paragraf = document.createElement('p');
 
                     // cria tag h5 contendo nome de quem enviou a mensagem
                     titulo.innerHTML = result[i].origem;
@@ -54,7 +65,7 @@ setInterval(function(){
                     li.appendChild(paragraf);
                     
                     // condição para exibir a mensagem para esquerda ou direita
-                    if(elOrigem.value === result[i].origem){
+                    if(localStorage.nome === result[i].origem){
                         // recebe classList para exibir mensagem para a esquerda
                         li.classList.add('esquerda');
                         // appenda tudo ao elLista
