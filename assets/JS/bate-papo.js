@@ -2,8 +2,15 @@ var elOrigem = document.getElementById('origem');
 var elDestino = document.getElementById('destino');
 var elMensagem = document.getElementById('msgDigitada');
 var elLista = document.getElementById('msgExibidas');
+var elEnvio = document.getElementById('Envio');
 
 elOrigem.value = localStorage.nome;
+elMensagem.addEventListener("keypress", function (eventoEnter) {
+    if (eventoEnter.key === "Enter") {
+        eventoEnter.preventDefault();
+        elEnvio.click();
+    }
+  });
 
 // abrindo uma requisição
 var opRequest = new XMLHttpRequest(); // criando uma instância
@@ -76,12 +83,12 @@ setInterval(function(){
                         
                         // appenda tudo ao elLista
                         elLista.appendChild(li); 
-                    }
+                    };
                 };
             };
         };
     };
-}, 2000);
+}, 5000);
 
 // chama função com o click do botão 'enviar'
 var enviar = function() {
