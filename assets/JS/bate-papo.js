@@ -14,7 +14,7 @@ elMensagem.addEventListener("keypress", function (eventoEnter) {
 
 // abrindo uma requisição
 var opRequest = new XMLHttpRequest(); // criando uma instância
-opRequest.open('GET', 'https://barth.com.br/ApiChatCliqx/chat/receberUsuarios.php'); // consultando um url
+opRequest.open('GET', ''); // consultando um url
 opRequest.send(null); // não envia nada, pois está apenas consultando a api
 // chaca o estado de prontidão
 opRequest.onreadystatechange = function() {
@@ -42,7 +42,7 @@ opRequest.onreadystatechange = function() {
 setInterval(function(){
     var xhr = new XMLHttpRequest(); // recebe instância
 
-    xhr.open('GET', `https://barth.com.br/ApiChatCliqx/chat/verificarMensagem.php?origem=${elOrigem.value}&destino=${elDestino.value}`); // consulta api pelo link, enviando o que foi digitado nos campos de entrada de dados(input's)
+    xhr.open('GET', ``); // consulta api pelo link, enviando o que foi digitado nos campos de entrada de dados(input's)
     xhr.send(null); // não envia nada para a api, pois está apenas consultando com o 'GET'
     // checa status da api para saber se ela está pronta para consulta
     xhr.onreadystatechange = function() {
@@ -102,7 +102,7 @@ var enviar = function() {
 
     // consulta a api
     var xhr = new XMLHttpRequest(); // recebe instância
-    xhr.open('POST', `https://barth.com.br/ApiChatCliqx/chat/inserirMensagem.php`); // consulta api pelo link    
+    xhr.open('POST', ``); // consulta api pelo link    
     xhr.send(JSON.stringify(obj)); // método send que envia ou não alguma coisa para a api
     // checa o status da api para saber se está pronta para consultar
     xhr.onreadystatechange = function() {

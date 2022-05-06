@@ -7,7 +7,7 @@ var logar = function(){
 
     xhr.open(
         'GET', 
-        `https://barth.com.br/ApiChatCliqx/chat/verificarLogin.php?email=${elEmail.value}&senha=${elSenha.value}`);
+        ``);
     xhr.send(null);
     xhr.onreadystatechange = function(){
         if(xhr.readyState === 4){
@@ -19,7 +19,7 @@ var logar = function(){
                     window.location.href = `../../JAVASCRIPT/chat/bate-papo.html`;
                     // window.location.href = `../../bate-papo.html`;
                 }else{
-                    alert('Email ou senha incorretos')
+                    alert('Email ou senha incorretos');
                 };
             };
         };
